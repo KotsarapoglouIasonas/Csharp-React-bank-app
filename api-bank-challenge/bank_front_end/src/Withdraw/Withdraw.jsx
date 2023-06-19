@@ -57,7 +57,7 @@ function Withdraw() {
                     name: state.name,
                     description: description,
                     ammount: parseInt(ammount),
-                    type: "A Withdraw was made on: " + new Date().toString(),
+                    type: "A Withdraw was made on: " + new Date().toString() + ", New Balance: " + (parseInt(account.balance) - parseInt(ammount)),
                     accountId: account.id
                 }
                 console.log(transaction);

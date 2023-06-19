@@ -4,6 +4,11 @@ import './App.css';
 function Menu() {
     const { state } = useLocation();
     const navigate = useNavigate();
+    
+
+    if (state === {}) {
+        navigate("/");
+    }
     const name = state.name;
 
     const handleDeposit = () => {

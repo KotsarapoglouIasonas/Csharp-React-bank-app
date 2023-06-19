@@ -49,7 +49,7 @@ function DepositOwn() {
                     name: state.name,
                     description: description,
                     ammount: parseInt(ammount),
-                    type: "A Deposit was made on: "+new Date().toString(),
+                    type: "A Deposit was made on: " + new Date().toString() + ", New Balance: " + (parseInt(ammount) + parseInt(account.balance)),
                     accountId: account.id
                 }
                 console.log(transaction);
