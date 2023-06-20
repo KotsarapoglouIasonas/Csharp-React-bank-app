@@ -1,5 +1,6 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import './App.css';
+import pic from "./Images/Bank.png";
 
 function Menu() {
     const { state } = useLocation();
@@ -27,21 +28,24 @@ function Menu() {
 
     return (
         <div className="Menu">
-            <header>Welcome {state.name} </header>
-            <div className="MenuContainer">
-                <div className="MenuBox">
-                    <p>Deposit:  </p>
-                    <button class="btn1" type="button" onClick={() => handleDeposit()}>Deposit</button>            
+            <img src={pic} className="LogoPages" />
+            <div className="Column">
+                <header className="TextTop">Welcome {state.name} </header>
+                <div className="MenuContainer">
+                    <div className="MenuBox">
+                        <p>Deposit:  </p>
+                        <button class="btn1" type="button" onClick={() => handleDeposit()}>Deposit</button>            
+                    </div>
+                    <div className="MenuBox">
+                        <p>Withdraw:  </p>
+                        <button class="btn2" type="button" onClick={() => handleWithdraw()}>Withdraw</button>
+                    </div>
+                    <div className="MenuBox">
+                        <p>Bank Statement:</p>
+                        <button class="btn3" type="button" onClick={() => handleBankStatement()}>Transactions</button>
+                    </div>
+                    <button class="btnLogout" onClick={() => handleBack()}>Logout</button>
                 </div>
-                <div className="MenuBox">
-                    <p>Withdraw:  </p>
-                    <button class="btn2" type="button" onClick={() => handleWithdraw()}>Withdraw</button>
-                </div>
-                <div className="MenuBox">
-                    <p>Bank Statement:</p>
-                    <button class="btn3" type="button" onClick={() => handleBankStatement()}>Transactions</button>
-                </div>
-                <button class="btnLogout" onClick={() => handleBack()}>Logout</button>
             </div>
         </div>
 

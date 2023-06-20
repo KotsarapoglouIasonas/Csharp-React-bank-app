@@ -1,6 +1,7 @@
 import { useNavigate, useLocation } from 'react-router-dom'; 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import pic from ".././Images/Bank.png";
 
 function DepositSomeone() {
 
@@ -72,20 +73,23 @@ function DepositSomeone() {
 
     return(
         <div className="DepositOwn">
-            <header>Deposit to Someone</header>
-            <div className="DepositSomeoneContainer">
-                <div className="DepositOwnBox">
-                    <form onSubmit={handleSubmit}>
-                        <p>User id</p>
-                        <input className="DepositInput" value={someoneId} onChange={(e) => setSomeoneId(e.target.value)}  placeholder="0" name="someoneId" />
-                        <p>Ammount to Deposit</p>
-                        <input className="DepositInput" value={ammount} onChange={(e) => setAmmount(e.target.value)} placeholder="0" name="ammount" />
-                        <p>Description</p>
-                        <input className="DepositInput" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Description" name="Description" /><br></br>
-                        <button className="btn5" type="submit" onClick={() => handleDeposit()}>Deposit</button>
-                    </form>
-                    <br></br>
-                    <button className="btnLogout" type="submit" onClick={() => handleBack()}>Back</button>
+            <img src={pic} className="LogoPages" />
+            <div className="Column">
+                <header className="TextTop">Deposit to Someone</header>
+                <div className="DepositSomeoneContainer">
+                    <div className="DepositOwnBox">
+                        <form onSubmit={handleSubmit}>
+                            <p>User id</p>
+                            <input className="DepositInput" value={someoneId} onChange={(e) => setSomeoneId(e.target.value)}  placeholder="0" name="someoneId" />
+                            <p>Ammount to Deposit</p>
+                            <input className="DepositInput" value={ammount} onChange={(e) => setAmmount(e.target.value)} placeholder="0" name="ammount" />
+                            <p>Description</p>
+                            <input className="DepositInput" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Description" name="Description" /><br></br>
+                            <button className="btn5" type="submit" onClick={() => handleDeposit()}>Deposit</button>
+                        </form>
+                        <br></br>
+                        <button className="btnLogout" type="submit" onClick={() => handleBack()}>Back</button>
+                    </div>
                 </div>
             </div>
         </div >

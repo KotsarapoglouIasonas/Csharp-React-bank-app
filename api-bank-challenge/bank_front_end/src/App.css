@@ -14,9 +14,19 @@
     color: white;
     background-image: linear-gradient( #3333ff, #9900cc 80%);
     display: flex;
-    flex-direction: column;
     font-size: 45px;
     font-weight: bold;
+}
+.LogoPages {
+    margin-left: -550px;
+
+}
+.Column {
+    display: flex;
+    flex-direction: column;
+}
+.TextTop {
+    text-align: center;
 }
 
 
@@ -120,6 +130,14 @@
     justify-content: center;
     color: white;
     background-image: linear-gradient( #3333ff, #9900cc 80%);
+}
+
+.Slogan {
+    margin:auto;
+}
+.Logo {
+    margin-left: 60px;
+    margin-right: 50px;;
 }
 
 .List {

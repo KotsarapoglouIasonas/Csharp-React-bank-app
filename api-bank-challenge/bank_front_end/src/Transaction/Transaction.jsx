@@ -1,6 +1,6 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import React, { useState, useEffect } from "react";
-
+import pic from ".././Images/Bank.png";
 
 function Transaction() {
     const [transactions, setTransactions] = useState([]);
@@ -52,28 +52,31 @@ function Transaction() {
 
     return (
         <div className="Transaction" >
-            <header>Transaction List</header>
-            <div className="DepositContainer">
-                <div className="List">
-                    <ul>
-                    {
-                        transactions.map(item => {
-                            if (account !== undefined) {
-                                if (item.accountId === account.id) {
-                                    return (<li>
-                                        <header>Transaction Details:</header>
-                                        <p>Name: {item.name}</p>
-                                        <p>Description: {item.description}</p>
-                                        <p>Ammount: {item.ammount}</p>
-                                        <p>Info: {item.type}</p>
-                                    </li>)
+            <img src={pic} className="LogoPages" />
+            <div className="Column">
+                <header className="TextTop">Transaction List</header>
+                <div className="DepositContainer">
+                    <div className="List">
+                        <ul>
+                        {
+                            transactions.toReversed().map(item => {
+                                if (account !== undefined) {
+                                    if (item.accountId === account.id) {
+                                        return (<li>
+                                            <header>Transaction Details:</header>
+                                            <p>Name: {item.name}</p>
+                                            <p>Description: {item.description}</p>
+                                            <p>Ammount: {item.ammount}</p>
+                                            <p>Info: {item.type}</p>
+                                        </li>)
+                                    }
                                 }
-                            }
-                        })
-                    }
-                    </ul>
+                            })
+                        }
+                        </ul>
+                    </div>
+                    <button className="btnLogoutTransaction" type="submit" onClick={() => handleBack()}>Back</button>
                 </div>
-                <button className="btnLogoutTransaction" type="submit" onClick={() => handleBack()}>Back</button>
             </div>
         </div>
     )

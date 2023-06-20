@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import './App.css';
+import pic from "./Images/Bank.png";
 
 function Forgot() {
     const [email, setEmail] = useState('');
@@ -60,18 +61,21 @@ function Forgot() {
 
     return(
         <div className="DepositOwn">
-            <header>Reset your password</header>
-            <div className="DepositContainer">
-                <div className="ForgotBox">
-                    <form onSubmit={handleSubmit}>
-                        <p className="ForgotP" >Email</p>
-                        <input className="ForgotInput" value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="youremail@gmail.com" id="email" name="email" />
-                        <p className="ForgotP" >Password</p>
-                        <input className="ForgotInput" value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" /><br></br>
-                        <button className="btnreset" type="submit" onClick={() => handleReset()}>Reset</button>
-                    </form>
-                    <br></br>
-                    <button className="btnLogout" type="submit" onClick={() => handleBack()}>Back</button>
+            <img src={pic} className="LogoPages" />
+            <div className="Column">
+            <header className="TextTop">Reset your password</header>
+                <div className="DepositContainer">
+                    <div className="ForgotBox">
+                        <form onSubmit={handleSubmit}>
+                            <p className="ForgotP" >Email</p>
+                            <input className="ForgotInput" value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="youremail@gmail.com" id="email" name="email" />
+                            <p className="ForgotP" >Password</p>
+                            <input className="ForgotInput" value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" /><br></br>
+                            <button className="btnreset" type="submit" onClick={() => handleReset()}>Reset</button>
+                        </form>
+                        <br></br>
+                        <button className="btnLogout" type="submit" onClick={() => handleBack()}>Back</button>
+                    </div>
                 </div>
             </div>
         </div>
